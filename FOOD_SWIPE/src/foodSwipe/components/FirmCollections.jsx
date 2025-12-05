@@ -35,15 +35,17 @@ const FirmCollections = () => {
                        <div className='firmGroupBox'>
                          <div className='firmGroup'>
                             <img src={`${API_URL}/uploads/${item.image}`}  />
-                        </div>
+
+                          </div>
                         <div className='firmDetails'>
-                            <ul>
-                                <li className='firmName'>
-                                  <strong>  {item.firmname}  </strong> 
-                                </li>
-                                <li>{item.region}</li>
-                                <li>{item.area}</li>
-                            </ul>
+                          <strong>  {item.firmname}  </strong> 
+                         <div className='firmArea'>
+                            {item.region.join(', ')}
+                          </div> 
+                          <div className='firmArea'>
+                            {item.area}
+                          </div> 
+                          
                             
                         </div>
                        </div>

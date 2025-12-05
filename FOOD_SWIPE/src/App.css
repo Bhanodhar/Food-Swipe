@@ -84,9 +84,17 @@ body {
 }
 
 .firmDetails{
-    border:1px solid red;
+   
 }
 
-.firmDetails ul li{
-    list-style: none;
+
+.firmName{
+    color: black;
 }
+
+.firmArea{
+    color: gray;
+    font-size: small;
+}
+
+

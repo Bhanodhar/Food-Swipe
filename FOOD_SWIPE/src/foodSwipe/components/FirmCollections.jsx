@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { API_URL } from '../api'
+import { Link } from 'react-router-dom';
 
 const FirmCollections = () => {
 
@@ -32,12 +33,14 @@ const FirmCollections = () => {
                 <>
                  {i.firm.map((item)=>{
                     return (
-                       <div className='firmGroupBox'>
+                       <Link to={`/products/${item._id}`} >
+                        <div className='firmGroupBox'>
                          <div className='firmGroup'>
                             <img src={`${API_URL}/uploads/${item.image}`}  />
 
                           </div>
                         <div className='firmDetails'>
+                          <p>{item._id}</p>
                           <strong>  {item.firmname}  </strong> 
                          <div className='firmArea'>
                             {item.region.join(', ')}
@@ -49,6 +52,7 @@ const FirmCollections = () => {
                             
                         </div>
                        </div>
+                       </Link>
                     )
                 })} 
                 </>

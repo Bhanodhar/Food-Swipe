@@ -12,7 +12,8 @@ const ProductMenu = () => {
       const response = await fetch(`${API_URL}/product/${firmId}/products`)
       const newProductData = await response.json();
       setProducts(newProductData.products);
-      console.log("Fetched Products: ", newProductData);
+      // console.log("Fetched Products: ", newProductData);
+
     } catch (error) {
       alert("Failed to fetch products")
       console.error('Error fetching products:', error)
@@ -21,18 +22,30 @@ const ProductMenu = () => {
 
   useEffect(() => {
     productHandler()
-  }, [])
+  }, [firmId])
 
   return (
-    <section className='productMenuSection'>
+   <>
+   {/* <TopBar /> */}
+     <section className='productSection'>
       {products.map((item)=>{
         return (
-          <>
-           {item.productName}
-          </>
-        )}) 
-}    
+          <div className='productBox'>
+            <div>
+              <div><strong>{item.productname}</strong></div>
+              <div>{item.price}/-</div>
+              <div>{item.description}</div>
+            </div>
+           
+           <div className='productGroup'>
+              <img src={`${API_URL}/uploads/${item.image}`}  />
+              <div className='AddButton'> ADD </div>
+            </div>
+          </div>
+        )
+        })}    
 </section>
+   </>
   )
 }
 

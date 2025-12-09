@@ -97,4 +97,38 @@ body {
     font-size: small;
 }
 
+.productSection {
+    display: flex;
+    flex-direction: column;
+    padding: 0 150px;
+    margin-top: 50px;
+}
+
+.productBox{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 30px;
+    position: relative;
+}
+
+.productGroup img{
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+}
+
+.AddButton{
+    border: 1px solid lightgray;
+    text-align: center;
+    background-color: white;
+    border-radius: 5px;
+    color: green;
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    max-width: 80px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
 

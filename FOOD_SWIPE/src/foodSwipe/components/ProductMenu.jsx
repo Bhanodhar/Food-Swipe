@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom';
 const ProductMenu = () => {
 
   const[products, setProducts] = useState([]);
-  const { firmId } = useParams();
+  const { firmId, firmname } = useParams();
 
   const productHandler = async () => {
     try {
@@ -28,6 +28,7 @@ const ProductMenu = () => {
    <>
    {/* <TopBar /> */}
      <section className='productSection'>
+      <h3>{firmname}</h3>
       {products.map((item)=>{
         return (
           <div className='productBox'>

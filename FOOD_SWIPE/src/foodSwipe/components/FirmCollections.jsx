@@ -33,14 +33,14 @@ const FirmCollections = () => {
                 <>
                  {i.firm.map((item)=>{
                     return (
-                       <Link to={`/products/${item._id}`} >
+                       <Link to={`/products/${item._id}/${item.firmname}`} className='firmLink'>
                         <div className='firmGroupBox'>
                          <div className='firmGroup'>
                             <img src={`${API_URL}/uploads/${item.image}`}  />
 
                           </div>
                         <div className='firmDetails'>
-                          <p>{item._id}</p>
+                          
                           <strong>  {item.firmname}  </strong> 
                          <div className='firmArea'>
                             {item.region.join(', ')}

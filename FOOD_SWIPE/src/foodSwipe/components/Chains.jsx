@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { API_URL } from '../api'
+import { FaArrowCircleLeft } from "react-icons/fa";
+import { FaArrowCircleRight } from "react-icons/fa";
 
 const Chains = () => {
   const [vendorData, setVendorData] = useState([]);
@@ -37,9 +39,13 @@ const Chains = () => {
 
   return (
     <>
-    <div className="chainHeader"> 
-      <button onClick={()=>handleScroll("left")}>Left</button>
-      <button onClick={()=>handleScroll("right")}>Right</button>
+    <div className="btnSection"> 
+      <button onClick={()=>handleScroll("left")}>
+        <FaArrowCircleLeft  className='btnIcons'/>
+      </button>
+      <button onClick={()=>handleScroll("right")}>
+        <FaArrowCircleRight className='btnIcons' />
+      </button>
     </div>
     <h3>Top Restaurents from Hyderabad</h3>
     <section className="chainSection" id='chainGallery' onScroll={(e)=>setScrollPosition(e.target.scrollLeft)}>

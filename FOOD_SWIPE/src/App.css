@@ -21,6 +21,15 @@ body {
     background-color: white ;
 }
 
+.companyTitle h2 {
+    color: green;
+    cursor: pointer;
+}
+
+.link{
+    text-decoration: none;
+}
+
 .itemSection {
     
     display: flex;
@@ -47,6 +56,26 @@ body {
 .landingSection {
     padding: 0 100px;
     
+}
+
+.btnSection {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px 0;
+    position: relative;
+    top: 50px;
+    right: 10px;
+    gap: 10px;
+}
+
+.btnSection button {
+    background-color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.btnIcons{
+    font-size: x-large;
 }
 
 .chainSection {

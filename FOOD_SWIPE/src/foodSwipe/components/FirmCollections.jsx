@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 const FirmCollections = () => {
 
     const [firmData, setFirmData] = useState([]);
+    const [selectedRegion, setSelectedRegion] = useState('All');
 
     const firmDataHandler = async () => { 
         try {
@@ -23,15 +24,28 @@ const FirmCollections = () => {
      useEffect(() => {
         firmDataHandler()
     }, [])
+
+      const filterHandler = (region) => {
+        setSelectedRegion(region);
+      }
+
   return (
     <>
     <h3>Restaurents with online food delivery in Hyderabad</h3>
-    
+
+    <div className="filterButton">
+      <button onClick={()=>{filterHandler("All")}}>All</button>
+      <button onClick={()=>{filterHandler("south-indian")}}>South-Indian</button>
+      <button onClick={()=>{filterHandler("north-indian")}}>North-Indian</button>
+      <button onClick={()=>{filterHandler("chinese")}}>Chinese</button>
+      <button onClick={()=>{filterHandler("bakery")}}>Bakery</button>
+    </div>    
     <section className="firmSection"> 
         {firmData.map((i)=>{
-            return (
-                <>
-                 {i.firm.map((item)=>{
+          return i.firm.map((item) => {
+            if(selectedRegion === 'All' || item.region.includes(selectedRegion.toLocaleLowerCase()))
+              { 
+
                     return (
                        <Link to={`/products/${item._id}/${item.firmname}`} className='firmLink'>
                         <div className='firmGroupBox'>
@@ -54,9 +68,9 @@ const FirmCollections = () => {
                        </div>
                        </Link>
                     )
-                })} 
-                </>
-            )
+            
+          }}) 
+            return null
         })
         }   
     </section>

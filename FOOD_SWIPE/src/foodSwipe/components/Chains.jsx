@@ -2,10 +2,12 @@ import React, { useState, useEffect } from 'react'
 import { API_URL } from '../api'
 import { FaArrowCircleLeft } from "react-icons/fa";
 import { FaArrowCircleRight } from "react-icons/fa";
+import { TailSpin } from 'react-loader-spinner'
 
 const Chains = () => {
   const [vendorData, setVendorData] = useState([]);
   const [scrollPosition, setScrollPosition] = useState(0);
+  const [loading, setLoading] = useState(true);
   
 
   const vendorFirmHandler = async () => {
@@ -15,9 +17,11 @@ const Chains = () => {
       const newData1 = await response.json()
       setVendorData(newData1)
       console.log("Fetched API Data: ",newData1)
+      setLoading(false)
     } catch (error) {
       alert("Failed to fetch vendor data")
       console.error('Error fetching vendor chains:', error)
+      setLoading(true)
     }
   }
 
@@ -39,6 +43,20 @@ const Chains = () => {
 
   return (
     <>
+    <div className="loaderSection">
+      {loading && <> 
+      <div className="loaderContainer"> Loading </div>
+        <TailSpin
+        visible={true}
+        height="80"
+        width="80"
+        color="#4fa94d"
+        ariaLabel="tail-spin-loading"
+        radius="1"
+        wrapperStyle={{}}
+        wrapperClass="" />
+    </>}
+    </div>
     <div className="btnSection"> 
       <button onClick={()=>handleScroll("left")}>
         <FaArrowCircleLeft  className='btnIcons'/>

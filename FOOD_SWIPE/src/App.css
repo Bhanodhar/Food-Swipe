@@ -175,9 +175,52 @@ body {
 }
 
 .loaderSection{
-    
+
     display: flex;
     justify-content: center;
     align-items: center;
     
 }
+
+ /*576, 756, 1024, 1140, 1380 */
+@media (max-width:576px ) {
+    .topBarSection {
+        padding: 0px 25px; 
+    }
+    .landingSection{
+        padding: 0px 10px;
+    }
+    .itemSection{
+        margin-top: 90px;
+    }
+    h3{
+        font-weight: 600;
+        font-size: medium;
+    }
+    .chainSection{
+        height: 190px;
+    }
+    .vendorBox img {
+        width: 260px;
+        height: 180px;
+        flex: 0 0 auto;
+        margin-right: 30px;
+        object-fit: cover;
+        border-radius: 15px;
+    }
+    .mediaChainSection {
+        margin-top: -30px;
+    }
+    .firmSection{
+        border: 1px solid red;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .firmGroup img{
+        width:300px;
+    }
+
+
+}              

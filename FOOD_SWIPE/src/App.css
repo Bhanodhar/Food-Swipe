@@ -100,6 +100,13 @@ body {
     border-radius: 15px;
 }
 
+.filterButton{
+    border: 1px solid red;
+    display: flex;
+    justify-content: space-around;
+    
+}
+
 .firmSection {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -141,6 +148,11 @@ body {
     padding: 0 150px;
     margin-top: 50px;
 }
+
+.productSection h3 {
+        text-align: center;
+        background-color: green;
+    }
 
 .productBox{
     display: flex;
@@ -211,8 +223,11 @@ body {
     .mediaChainSection {
         margin-top: -30px;
     }
-    .firmSection{
+
+    .filterButton{
         border: 1px solid red;
+    }
+    .firmSection{
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -220,6 +235,13 @@ body {
     }
     .firmGroup img{
         width:300px;
+    }
+    .productSection {
+        padding: 0px 10px;
+    }
+    .productSection h3 {
+        text-align: center;
+        background-color: green;
     }
 
 

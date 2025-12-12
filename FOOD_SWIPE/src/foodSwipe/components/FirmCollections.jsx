@@ -6,6 +6,7 @@ const FirmCollections = () => {
 
     const [firmData, setFirmData] = useState([]);
     const [selectedRegion, setSelectedRegion] = useState('All');
+    const [activeCategory, setActiveCategory] = useState('All');
 
     const firmDataHandler = async () => { 
         try {
@@ -25,8 +26,9 @@ const FirmCollections = () => {
         firmDataHandler()
     }, [])
 
-      const filterHandler = (region) => {
+      const filterHandler = (region, category) => {
         setSelectedRegion(region);
+        setActiveCategory(category);
       }
 
   return (
@@ -34,11 +36,11 @@ const FirmCollections = () => {
     <h3>Restaurents with online food delivery in Hyderabad</h3>
 
     <div className="filterButton">
-      <button onClick={()=>{filterHandler("All")}}>All</button>
-      <button onClick={()=>{filterHandler("south-indian")}}>South-Indian</button>
-      <button onClick={()=>{filterHandler("north-indian")}}>North-Indian</button>
-      <button onClick={()=>{filterHandler("chinese")}}>Chinese</button>
-      <button onClick={()=>{filterHandler("bakery")}}>Bakery</button>
+      <button onClick={()=>{filterHandler("All", 'All')}} className={activeCategory === 'All' ? 'activeButton': ''}>All</button>
+      <button onClick={()=>{filterHandler("south-indian", 'south-indian')}} className={activeCategory === 'south-indian' ? 'activeButton': ''}>South-Indian</button>
+      <button onClick={()=>{filterHandler("north-indian", 'north-indian')}} className={activeCategory === 'north-indian' ? 'activeButton': ''}>North-Indian</button>
+      <button onClick={()=>{filterHandler("chinese", 'chinese')}} className={activeCategory === 'chinese' ? 'activeButton': ''}>Chinese</button>
+      <button onClick={()=>{filterHandler("bakery", 'bakery')}} className={activeCategory === 'bakery' ? 'activeButton': ''}>Bakery</button>
     </div>    
     <section className="firmSection"> 
         {firmData.map((i)=>{

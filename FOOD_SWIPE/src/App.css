@@ -101,10 +101,19 @@ body {
 }
 
 .filterButton{
-    border: 1px solid red;
     display: flex;
     justify-content: space-around;
-    
+}
+
+.filterButton button{
+    width: 10rem;
+    padding: 5px 0px;
+}
+
+.activeButton{
+    background-color: greenyellow;
+    color: white;
+    border-radius: 5px;
 }
 
 .firmSection {
